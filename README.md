@@ -1,6 +1,6 @@
-# MD Wiki
+# django-mail
 
-MD Wiki is a simple markdown-supported wikipedia-like website, made with Django for CS50's Web programming course (Week 3).
+django-mail is a fake mail client, made with Django for CS50's Web programming course (Week 6).
 
 ## Usage
 
@@ -21,7 +21,6 @@ python manage.py migrate
 Lastly start a local server:
 
 ```bash
-# Install dependancies
 python manage.py runserver
 ```
 
