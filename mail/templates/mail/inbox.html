@@ -1,0 +1,28 @@
+{% extends "mail/layout.html" %} {% load static %} {% block body %}
+<h3>{{ request.user.email }}</h3>
+
+<button class="button" id="inbox">Inbox</button>
+<button class="button" id="compose">Compose</button>
+<button class="button" id="sent">Sent</button>
+<button class="button" id="archived">Archived</button>
+<a class="button" href="{% url 'logout' %}">Logout</a>
+<hr />
+
+<div id="emails-view"></div>
+
+<div id="compose-view">
+  <h3>New Email</h3>
+  <form id="compose-form">
+    From:
+    <input disabled class="form-control" value="{{ request.user.email }}" />
+    To:
+    <input id="compose-recipients" class="form-control" />
+    <input class="form-control" id="compose-subject" placeholder="Subject" />
+    <textarea id="compose-body" placeholder="Body"></textarea>
+    <div id="message"></div>
+    <input type="submit" class="button" />
+  </form>
+</div>
+{% endblock %} {% block script %}
+<script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}
